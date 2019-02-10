@@ -1,3 +1,5 @@
+# Managing Dependecies
+
 # An object has a dependency when it knows
 # - The name of another class. Gear expects a class named Wheel to exist.
 # - The name of a message that it intends to send to someone other than self. Gear expects a Wheel instance to respond to diameter.

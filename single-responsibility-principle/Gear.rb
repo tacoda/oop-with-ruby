@@ -1,3 +1,5 @@
+# Single Resonsbility
+
 # class Gear
 #   attr_reader :chainring, :cog, :wheel
 #   def initialize(chainring, cog, rim, tire)
