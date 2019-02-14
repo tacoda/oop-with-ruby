@@ -28,6 +28,7 @@ class Bicycle
     '10-speed'
   end
 
+  # raising errors enforces programmers to implement
   def default_tire_size
     raise NotImplementedError,
           "This #{self.class} cannot respond to:"
