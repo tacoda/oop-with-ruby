@@ -35,6 +35,16 @@ _"Class, what is your method?"_
 - Depend on behavior, not data
   - Hide instance variables
   - Hide data structures
+- Enforce single responsbility everywhere
+  - Extract extra responsibilities from methods
+  - Isolate extra responsbilities in classes
+
+Methods that follow SRP have the following benefits:
+
+- Expose previously hidden qualities
+- Avoid the need for comments
+- Encourage reuse
+- Are easy to move to another class
 
 ## Managing Depedencies
 
