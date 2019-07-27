@@ -28,7 +28,9 @@ Appliations that are easy to change consist of classes that are easy to reuse.
 
 Interrogate a class to determine if it has a single responsiblity:
 
-_"Class, what is your method?"_
+_"[Class], what is your [method]?"_
+
+_"[Class], please do [method]."_
 
 ### Techniques
 
@@ -50,7 +52,45 @@ Methods that follow SRP have the following benefits:
 
 ### Takeaways
 
+An object has a dependency when it knows:
+
+- The name of another class
+- The name of a message that it intends to send to someone other than self
+- The arguments that a message requires
+- The order of those arguments
+
+Dependencies tie classes together
+
+Choosing dependency direction:
+
+- Some classes are more likely than others to have changes in their requirements
+- Concrete classes are more likely to change than abstract classes
+- Changing a class that has many dependents will result in widespread consequences
+
+_Depend on things that change less than you do_
+
 ### Techniques
+
+- Inject dependencies
+  - Parameterize them to inject them
+- Isolate dependencies
+  - Isolate instance creation
+    Wrap initialization
+  - Isolate vulnerable external messages
+    Wrap calls to things other than self
+- Remove argument-order dependencies
+  - Explicitly define defaults
+    In initialize
+    Break out defaults method
+  - Isolate multiparameter initialization
+    Wrap the class interface in a module interface to protect from changes
+- Reversing dependencies
+  Swap service and client roles
+- Choosing dependency direction
+  - Understanding likelihood of change
+  - Recognizing concretions and abstractions
+  - Avoiding dependent-laden classes
+  - Finding the dependenices that matter
 
 ## Flexible Interfaces
 
