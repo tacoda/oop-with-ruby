@@ -96,7 +96,73 @@ _Depend on things that change less than you do_
 
 ### Takeaways
 
+_Programs are made up of classes, but defined by messages._
+
+Public interfaces:
+
+- Reveal its primary responsibility
+- Are expected to be invoked by others
+- Will not change on a whim
+- Are safe for others to depend on
+- Are thoroughly documented in the tests
+
+Private interfaces:
+
+- Handle implementation details
+- Are not expected to be send by other objects
+- Can change for any reason whatsoever
+- Are unsafe for others to depend on
+- May not even be referenced in the tests
+
+Finding an interface:
+
+- Constructing an intention
+  Domain objects: nouns
+  Don't focus on the domain objects, but on the messages that pass between them
+  Messages are guides to lead you to discover other objects
+- Using sequence diagrams
+  Should Class be responsible for doing method?
+- Ask for what instead of telling how
+- Seek context independence
+- Trust other objects
+- Use messages to discover objects
+- Create a message-based application
+
 ### Techniques
+
+- Create explicit interfaces
+- Honor the public interfaces of others
+- Methods in the public interface should
+  - Be explicitly defined
+  - Be more about what than how
+  - Have names that will not change easily
+  - Take a hash as an options parameter
+- Exercise caution when depending on private interfaces
+- Minimize context
+- Law of Demeter
+  - A set of coding rules that results in loosely coupled objects
+  - Only talk to your immediate neighbors
+  - Applies to types
+- Consequences of violations
+  - Your classes will fail to be TRUE
+- Avoiding violations
+  - Can use delegation, but this really hides it
+- Listening to Demeter
+  
+The train wrecks of Demeter violations are clues that there are objects whose
+public interfaces are lacking. Listening to Demeter means paying attention to your
+point of view. If you shift to a message-based perspective, the messages you find will
+become public interfaces in the objects they lead you to discover.
+
+Object-oriented applications are defined by the messages that pass between objects.
+This message passing takes place along “public” interfaces; well-defined public
+interfaces consist of stable methods that expose the responsibilities of their underlying
+classes and provide maximal benefit at minimal cost.
+
+Focusing on messages reveals objects that might otherwise be overlooked. When
+messages are trusting and ask for what the sender wants instead of telling the receiver
+how to behave, objects naturally evolve public interfaces that are flexible and reusable
+in novel and unexpected ways.
 
 ## Duck Typing
 
